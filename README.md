@@ -85,6 +85,77 @@ Creates a new course.
   "duration": "6 weeks"
 }
 Responses: 201 Created or 400 Bad Request
+```
+⚙️ Installation & Setup
+git clone https://github.com/HibaAhm/Course_api.git
+cd Course_api
+npm install
+npm run start:dev
+Server runs at: http://localhost:3000
 ---
+Swagger API Documentation
+
+If Swagger is enabled in main.ts, docs are at:
+http://localhost:3000/docs
+
+Install Swagger:
+
+npm install @nestjs/swagger swagger-ui-express
+
+Then configure it inside main.ts following the NestJS Swagger docs.
+---
+
+🧪 Testing
+
+Test API endpoints using:
+
+Postman
+
+Thunder Client (VS Code)
+
+curl
+
+Browser (GET endpoints)
+---
+
+🧠 Concepts Practiced
+
+REST API design
+
+DTO validation
+
+Exception handling
+
+Dependency Injection
+
+Modular architecture
+
+Type-safe development with TypeScript
+---
+
+📈 Future Improvements
+
+PUT /courses/:id (update)
+
+DELETE /courses/:id (delete)
+
+Unit tests (Jest)
+
+Database integration (PostgreSQL / MongoDB)
+
+JWT Authentication
+
+Production configuration
+---
+
+👩‍💻 Author
+
+Hiba Ahmedhussen
+Software Engineering Student
+---
+
+📄 License
+
+This project is for learning and technical assessment purposes. MIT License.
 
 
