@@ -1,44 +1,40 @@
-<p align="center">
-  <h1 align="center">📚 Course API</h1>
-  <p align="center">
-    A RESTful backend API built with 
-    <a href="https://nestjs.com/" target="_blank">NestJS</a> and 
-    <a href="https://nodejs.org/" target="_blank">Node.js</a>
-    for managing course data.
-  </p>
-</p>
+
+# 📚 Course API
+
+![Node](https://img.shields.io/badge/node-%3E=18.x-green)
+![NestJS](https://img.shields.io/badge/framework-NestJS-red)
+![TypeScript](https://img.shields.io/badge/language-TypeScript-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+A clean and minimal RESTful API built with [NestJS](https://nestjs.com/) and [Node.js](https://nodejs.org/) for managing course data.
+
+This project demonstrates modular architecture, DTO validation, proper HTTP status handling, and clean separation of concerns.
 
 ---
 
-## 🚀 Overview
+## 🚀 Features
 
-<p>
-Course API is a simple backend system that allows users to:
-</p>
-
-<ul>
-  <li>Retrieve all courses</li>
-  <li>Retrieve a course by ID</li>
-  <li>Create a new course</li>
-</ul>
-
-<p>
-It is built using a modular structure and follows REST principles.
-</p>
+- Retrieve all courses
+- Retrieve a course by ID (404 if not found)
+- Create a new course
+- DTO validation using `class-validator`
+- Proper HTTP status codes (200, 201, 400, 404)
+- In-memory data storage
+- Clean module / controller / service structure
 
 ---
 
 ## 🛠 Tech Stack
 
-<ul>
-  <li><strong>Framework:</strong> <a href="https://nestjs.com/" target="_blank">NestJS</a></li>
-  <li><strong>Runtime:</strong> <a href="https://nodejs.org/" target="_blank">Node.js</a></li>
-  <li><strong>Language:</strong> TypeScript</li>
-  <li><strong>Architecture:</strong> Modular + Dependency Injection</li>
-  <li><strong>API Type:</strong> RESTful API</li>
-</ul>
+- **Framework:** NestJS
+- **Runtime:** Node.js
+- **Language:** TypeScript
+- **Validation:** class-validator
+- **Architecture:** Modular + Dependency Injection
+- **API Style:** REST
 
 ---
+
 
 ## 📂 Project Structure
 
@@ -52,51 +48,117 @@ src/
  │         └── create-course.dto.ts
  ├── app.module.ts
  └── main.ts
-📌 API Endpoints
-🔹 Get All Courses
-GET /courses
 
-Example:
+---
 
-http://localhost:3000/courses
-🔹 Get Course by ID
-GET /courses/:id
+---
 
-Example:
+## 📌 API Endpoints
 
-http://localhost:3000/courses/1
-🔹 Create a Course
-POST /courses
+### 1️⃣ GET /courses
 
-Request Body (JSON):
+Returns all courses.
 
+**Response:** `200 OK`
+
+---
+
+### 2️⃣ GET /courses/:id
+
+Returns a single course by ID.
+
+**Responses:**
+- `200 OK`
+- `404 Not Found`
+
+Example:GET http://localhost:3000/courses/1
+
+
+---
+
+### 3️⃣ POST /courses
+
+Creates a new course.
+
+**Request Body:**
+
+```json
 {
-  "title": "NestJS Fundamentals",
+  "title": "Intro to HTML",
   "level": "Beginner",
-  "duration": "6 weeks"
+  "duration": "4 weeks"
 }
+
 ⚙️ Installation & Setup
-1️⃣ Clone the repository
+1. Clone the repository
 git clone https://github.com/HibaAhm/Course_api.git
 cd Course_api
-2️⃣ Install dependencies
+2. Install dependencies
 npm install
-3️⃣ Run in development mode
+3. Run in development mode
 npm run start:dev
 
-Server will start at:
+The server will start at:
 
 http://localhost:3000
-🧪 Testing the API
 
-You can test endpoints using:
+Swagger API Documentation 
 
-<ul> <li>Browser (for GET requests)</li> <li>Postman</li> <li>Thunder Client (VS Code extension)</li> <li>curl</li> </ul>
-🧠 Concepts Practiced
-<ul> <li>Controllers</li> <li>Services</li> <li>Modules</li> <li>Dependency Injection</li> <li>DTOs (Data Transfer Objects)</li> <li>Route Parameters</li> <li>HTTP Status Codes</li> <li>TypeScript typing</li> </ul>
+If Swagger is enabled in main.ts, documentation will be available at:
+
+http://localhost:3000/docs
+
+To enable Swagger, install:
+
+npm install @nestjs/swagger swagger-ui-express
+
+Then configure it inside main.ts.
+
+🧪 Testing
+
+You can test the API using:
+
+Postman
+
+Thunder Client
+
+curl
+
+Browser (GET endpoints)
+
+🧠 Concepts Demonstrated
+
+REST API design
+
+DTO validation
+
+Exception handling
+
+Dependency Injection
+
+Modular architecture
+
+Type-safe development with TypeScript
+
 📈 Future Improvements
-<ul> <li>Add PUT (update course)</li> <li>Add DELETE endpoint</li> <li>Integrate database (MongoDB or PostgreSQL)</li> <li>Add validation with class-validator</li> <li>Add authentication (JWT)</li> <li>Add Swagger documentation</li> </ul>
+
+PUT /courses/:id (update)
+
+DELETE /courses/:id (delete)
+
+Unit tests (Jest)
+
+Database integration (PostgreSQL / MongoDB)
+
+JWT Authentication
+
+Production configuration
+
 👩‍💻 Author
-<p> Developed by <strong>Hiba Ahmedhussen</strong><br/> Software Engineering Student </p>
-📜 License
-<p> This project is for learning and educational purposes. </p> ```
+
+Hiba Ahmedhussen
+Software Engineering Student
+
+License
+
+This project is created for learning and technical assessment purposes.
