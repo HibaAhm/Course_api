@@ -1,98 +1,102 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <h1 align="center">📚 Course API</h1>
+  <p align="center">
+    A RESTful backend API built with 
+    <a href="https://nestjs.com/" target="_blank">NestJS</a> and 
+    <a href="https://nodejs.org/" target="_blank">Node.js</a>
+    for managing course data.
+  </p>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+## 🚀 Overview
+
+<p>
+Course API is a simple backend system that allows users to:
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<ul>
+  <li>Retrieve all courses</li>
+  <li>Retrieve a course by ID</li>
+  <li>Create a new course</li>
+</ul>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<p>
+It is built using a modular structure and follows REST principles.
+</p>
 
-## Project setup
+---
 
-```bash
-$ npm install
-```
+## 🛠 Tech Stack
 
-## Compile and run the project
+<ul>
+  <li><strong>Framework:</strong> <a href="https://nestjs.com/" target="_blank">NestJS</a></li>
+  <li><strong>Runtime:</strong> <a href="https://nodejs.org/" target="_blank">Node.js</a></li>
+  <li><strong>Language:</strong> TypeScript</li>
+  <li><strong>Architecture:</strong> Modular + Dependency Injection</li>
+  <li><strong>API Type:</strong> RESTful API</li>
+</ul>
 
-```bash
-# development
-$ npm run start
+---
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## 📂 Project Structure
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+src/
+ ├── courses/
+ │    ├── courses.controller.ts
+ │    ├── courses.service.ts
+ │    ├── courses.module.ts
+ │    └── dto/
+ │         └── create-course.dto.ts
+ ├── app.module.ts
+ └── main.ts
+📌 API Endpoints
+🔹 Get All Courses
+GET /courses
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Example:
 
-## Resources
+http://localhost:3000/courses
+🔹 Get Course by ID
+GET /courses/:id
 
-Check out a few resources that may come in handy when working with NestJS:
+Example:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+http://localhost:3000/courses/1
+🔹 Create a Course
+POST /courses
 
-## Support
+Request Body (JSON):
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+{
+  "title": "NestJS Fundamentals",
+  "level": "Beginner",
+  "duration": "6 weeks"
+}
+⚙️ Installation & Setup
+1️⃣ Clone the repository
+git clone https://github.com/HibaAhm/Course_api.git
+cd Course_api
+2️⃣ Install dependencies
+npm install
+3️⃣ Run in development mode
+npm run start:dev
 
-## Stay in touch
+Server will start at:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+http://localhost:3000
+🧪 Testing the API
 
-## License
+You can test endpoints using:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+<ul> <li>Browser (for GET requests)</li> <li>Postman</li> <li>Thunder Client (VS Code extension)</li> <li>curl</li> </ul>
+🧠 Concepts Practiced
+<ul> <li>Controllers</li> <li>Services</li> <li>Modules</li> <li>Dependency Injection</li> <li>DTOs (Data Transfer Objects)</li> <li>Route Parameters</li> <li>HTTP Status Codes</li> <li>TypeScript typing</li> </ul>
+📈 Future Improvements
+<ul> <li>Add PUT (update course)</li> <li>Add DELETE endpoint</li> <li>Integrate database (MongoDB or PostgreSQL)</li> <li>Add validation with class-validator</li> <li>Add authentication (JWT)</li> <li>Add Swagger documentation</li> </ul>
+👩‍💻 Author
+<p> Developed by <strong>Hiba Ahmedhussen</strong><br/> Software Engineering Student </p>
+📜 License
+<p> This project is for learning and educational purposes. </p> ```
