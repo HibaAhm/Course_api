@@ -1,132 +1,137 @@
+<p align="center">
+  <a href="https://nestjs.com/" target="_blank">
+    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
+  </a>
+</p>
 
-# 📚 Course API
+[![Node.js](https://img.shields.io/badge/node-%3E=18.x-green)](https://nodejs.org/)
+[![NestJS](https://img.shields.io/badge/framework-NestJS-red)](https://nestjs.com/)
+[![TypeScript](https://img.shields.io/badge/language-TypeScript-blue)](https://www.typescriptlang.org/)
+[![NPM Version](https://img.shields.io/npm/v/@nestjs/core.svg)](https://www.npmjs.com/package/@nestjs/core)
+[![License](https://img.shields.io/npm/l/@nestjs/core.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://img.shields.io/circleci/build/github/nestjs/nest/master)](https://circleci.com/gh/nestjs/nest)
+[![Discord](https://img.shields.io/badge/discord-online-brightgreen.svg)](https://discord.gg/G7Qnnhy)
 
-![Node](https://img.shields.io/badge/node-%3E=18.x-green)
-![NestJS](https://img.shields.io/badge/framework-NestJS-red)
-![TypeScript](https://img.shields.io/badge/language-TypeScript-blue)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
-
-A clean and minimal RESTful API built with [NestJS](https://nestjs.com/) and [Node.js](https://nodejs.org/) for managing course data.
-
-This project demonstrates modular architecture, DTO validation, proper HTTP status handling, and clean separation of concerns.
+<p align="center">
+A clean, modular <a href="https://nodejs.org/" target="_blank">Node.js</a> REST API built with <a href="https://nestjs.com/" target="_blank">NestJS</a> to manage courses.
+</p>
 
 ---
 
-## 🚀 Features
+## 📚 Course API Overview
+Course API is a RESTful backend system to manage courses.  
+It demonstrates modular architecture, DTO validation, proper HTTP status handling, and clean separation of concerns.
 
+**Key Features:**
 - Retrieve all courses
 - Retrieve a course by ID (404 if not found)
 - Create a new course
 - DTO validation using `class-validator`
 - Proper HTTP status codes (200, 201, 400, 404)
 - In-memory data storage
-- Clean module / controller / service structure
+- Clean module/controller/service structure
 
 ---
 
 ## 🛠 Tech Stack
-
-- **Framework:** NestJS
-- **Runtime:** Node.js
-- **Language:** TypeScript
-- **Validation:** class-validator
-- **Architecture:** Modular + Dependency Injection
-- **API Style:** REST
+- **Framework:** NestJS  
+- **Runtime:** Node.js  
+- **Language:** TypeScript  
+- **Validation:** class-validator  
+- **Architecture:** Modular + Dependency Injection  
+- **API Style:** REST  
 
 ---
 
-
+___
 ## 📂 Project Structure
-
-```bash
 src/
- ├── courses/
- │    ├── courses.controller.ts
- │    ├── courses.service.ts
- │    ├── courses.module.ts
- │    └── dto/
- │         └── create-course.dto.ts
- ├── app.module.ts
- └── main.ts
+├── courses/
+│ ├── courses.controller.ts
+│ ├── courses.service.ts
+│ ├── courses.module.ts
+│ └── dto/
+│ └── create-course.dto.ts
+├── app.module.ts
+└── main.ts
 
----
 
----
+
+* * *
+
+___
+
+
 
 ## 📌 API Endpoints
 
-### 1️⃣ GET /courses
+### GET /courses
+Returns all courses.  
+**Response:** `200 OK`  
+Example: `http://localhost:3000/courses`
 
-Returns all courses.
+### GET /courses/:id
+Returns a course by ID.  
+**Responses:** `200 OK` or `404 Not Found`  
+Example: `http://localhost:3000/courses/1`
 
-**Response:** `200 OK`
-
----
-
-### 2️⃣ GET /courses/:id
-
-Returns a single course by ID.
-
-**Responses:**
-- `200 OK`
-- `404 Not Found`
-
-Example:GET http://localhost:3000/courses/1
-
-
----
-
-### 3️⃣ POST /courses
-
-Creates a new course.
-
+### POST /courses
+Creates a new course.  
 **Request Body:**
-
 ```json
 {
-  "title": "Intro to HTML",
+  "title": "NestJS Fundamentals",
   "level": "Beginner",
-  "duration": "4 weeks"
+  "duration": "6 weeks"
 }
+Responses: 201 Created or 400 Bad Request
+
+
+* * *
+
+___
 
 ⚙️ Installation & Setup
-1. Clone the repository
 git clone https://github.com/HibaAhm/Course_api.git
 cd Course_api
-2. Install dependencies
 npm install
-3. Run in development mode
 npm run start:dev
 
-The server will start at:
+Server runs at: http://localhost:3000
 
-http://localhost:3000
 
-Swagger API Documentation 
+___
+Swagger API Documentation
 
-If Swagger is enabled in main.ts, documentation will be available at:
-
+If Swagger is enabled in main.ts, docs are at:
 http://localhost:3000/docs
 
-To enable Swagger, install:
+Install Swagger:
 
 npm install @nestjs/swagger swagger-ui-express
 
-Then configure it inside main.ts.
+Then configure it inside main.ts following NestJS Swagger docs.
+
+* * *
+
 
 🧪 Testing
 
-You can test the API using:
+Test API endpoints using:
 
 Postman
 
-Thunder Client
+Thunder Client (VS Code)
 
 curl
 
 Browser (GET endpoints)
 
-🧠 Concepts Demonstrated
+* * *
+
+___
+
+🧠 Concepts Practiced
 
 REST API design
 
@@ -139,6 +144,10 @@ Dependency Injection
 Modular architecture
 
 Type-safe development with TypeScript
+---
+
+* * *
+
 
 📈 Future Improvements
 
@@ -153,12 +162,21 @@ Database integration (PostgreSQL / MongoDB)
 JWT Authentication
 
 Production configuration
+---
+
+
+
+___
 
 👩‍💻 Author
 
 Hiba Ahmedhussen
 Software Engineering Student
 
-License
 
-This project is created for learning and technical assessment purposes.
+* * *
+
+___
+📄 License
+
+This project is for learning and technical assessment purposes. MIT License.
