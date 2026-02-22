@@ -87,11 +87,13 @@ Creates a new course.
 Responses: 201 Created or 400 Bad Request
 ```
 ⚙️ Installation & Setup
+```
 git clone https://github.com/HibaAhm/Course_api.git
 cd Course_api
 npm install
 npm run start:dev
 Server runs at: http://localhost:3000
+```
 ---
 Swagger API Documentation
 
@@ -99,8 +101,10 @@ If Swagger is enabled in main.ts, docs are at:
 http://localhost:3000/docs
 
 Install Swagger:
+```
 
 npm install @nestjs/swagger swagger-ui-express
+```
 
 Then configure it inside main.ts following the NestJS Swagger docs.
 ---
