@@ -1,7 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateCourseDto } from './dto/create-course.dto';
 
-// Define Course type
 export interface Course {
   id: number;
   title: string;
@@ -28,5 +27,20 @@ export class CoursesService {
     const newCourse: Course = { id: this.idCounter++, ...dto };
     this.courses.push(newCourse);
     return newCourse;
+  }
+
+  // ✅ Add PUT method
+  update(id: number, dto: CreateCourseDto): Course {
+    const index = this.courses.findIndex(c => c.id === id);
+    if (index === -1) throw new NotFoundException('Course not found');
+    this.courses[index] = { id, ...dto };
+    return this.courses[index];
+  }
+
+  // ✅ Add DELETE method
+  remove(id: number): void {
+    const index = this.courses.findIndex(c => c.id === id);
+    if (index === -1) throw new NotFoundException('Course not found');
+    this.courses.splice(index, 1);
   }
 }

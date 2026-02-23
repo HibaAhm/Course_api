@@ -84,8 +84,15 @@ Creates a new course.
   "level": "Beginner",
   "duration": "6 weeks"
 }
-Responses: 201 Created or 400 Bad Request
 ```
+Responses: 201 Created or 400 Bad Request
+<<<<<<< HEAD
+```
+=======
+
+___
+
+>>>>>>> ed0278c (feat: implement PUT & DELETE endpoints and integrate Swagger documentation)
 ⚙️ Installation & Setup
 ```
 git clone https://github.com/HibaAhm/Course_api.git
